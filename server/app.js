@@ -12,6 +12,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // create application/json parser                 // Para Aplicaciones Json
 app.use(bodyParser.json());
 
+
+// Configuracion de Carpetas / Motor de plantillas
+app.set('view engine', 'ejs')
+app.set('views', __dirname + '/views')
+app.use(express.static(__dirname + '/public'))
+
+
+
+
 // Conexion DB
 mongoose.connect("mongodb://localhost:27017/proyecttavo", (err, res) => {
   if (err) throw err;

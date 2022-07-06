@@ -29,10 +29,7 @@ mongoose.connect("mongodb://localhost:27017/proyecttavo", (err, res) => {
 
 //Tavo
 app.get("/users", (req, res) => {
-  res.json({
-    ok: true,
-    msg: "hola mundo",
-  });
+  res.render('index')
 });
 
 app.post("/users", (req, res) => {

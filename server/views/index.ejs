@@ -1,12 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Document</title>
-</head>
-<body>
+
+    <style>
+        * {
+            box-sizing: content-box;
+        }
+
+        html {
+            text-align: center;
+        }
+
+        .inputs {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 1rem;
+        }
+
+        .boton {
+            padding: 0.2rem;
+        }
+
+    </style>
     
-</body>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form action="">
+      <label for="usuario">Usuario:</label>
+      <input type="text" name="usuario" id="usuario" class="inputs" required />
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" class="inputs" required />
+
+      <label for="password">Contraseña:</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        class="inputs"
+        required
+      />
+
+      <input type="submit" value="Enviar" id="" class="boton" />
+    </form>
+  </body>
 </html>

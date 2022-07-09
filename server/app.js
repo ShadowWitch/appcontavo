@@ -43,14 +43,18 @@ app.post("/users", (req, res) => {
     if (err) {
       return res.status(500).json({
         ok: false,
-        err,
+        msg:'Hola mundo',
+        err
       });
     }
 
-    res.json({
+    res.header({
+      'Access-Control-Allow-Origin': '*'
+    }).json({
       ok: true,
       usuarioDB,
-    });
+    })
+
   });
 });
 

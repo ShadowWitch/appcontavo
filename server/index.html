@@ -11,12 +11,12 @@
   </head>
   <body>
     <h1>Login</h1>
-    <form action="">
+    <form action="https://contavo2.herokuapp.com/users" id="formSubmit" method="post">
       <label for="usuario">Usuario:</label>
-      <input type="text" name="usuario" id="usuario" class="inputs" required />
+      <input type="text" name="username" id="usuario" class="inputs" required />
 
       <label for="email">Email:</label>
-      <input type="email" name="email id="email" class="inputs" required />
+      <input type="email" name="email" id="email" class="inputs" required />
 
       <label for="password">Contraseña:</label>
       <input
@@ -33,10 +33,15 @@
     <button id="btnEnviar">Enviar data</button>
     <button id="btnEnviar2">Enviar carros</button>
 
-
     <script>
       const btnEnviar = document.getElementById('btnEnviar')
       const btnEnviar2 = document.getElementById('btnEnviar2')
+      const formSubmit = document.getElementById('formSubmit')
+
+      formSubmit.addEventListener('submit', e => {
+        alert('Datos enviados')
+      })
+
       
       btnEnviar.addEventListener('click', async (e) =>{
 

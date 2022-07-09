@@ -59,6 +59,13 @@ app.post('/carros', (req, res) =>{
 })
 
 
+app.put('/users', (req, res) =>{
+  res.json({
+    msg: "hola"
+  })
+})
+
+
 app.post("/users", (req, res) => {
   const { username, password, email } = req.body;
 
@@ -70,21 +77,12 @@ app.post("/users", (req, res) => {
 
   usuario.save((err, usuarioDB) => {
     if (err) {
-      res.set({
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*"
-      })
       return res.status(500).json({
         ok: false,
         msg:'Hola mundo',
         err
       });
     }
-
-    res.set({
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*"
-    })
 
     res.json({
       ok: true,

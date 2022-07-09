@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/public'))
 
 
 // Conexion DB
-mongoose.connect("mongodb://localhost:27017/proyecttavo", (err, res) => {
+mongoose.connect("mongodb+srv://youtube_dev:pTcSpLibkpD4aChu@cluster0.9kgqd.mongodb.net/tavodb?retryWrites=true&w=majority", (err, res) => {
   if (err) throw err;
   console.log(`Conectado a proyecttavo.`);
 });

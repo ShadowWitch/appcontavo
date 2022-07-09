@@ -19,8 +19,6 @@ app.set('views', __dirname + '/views')
 app.use(express.static(__dirname + '/public'))
 
 
-
-
 // Conexion DB
 mongoose.connect("mongodb://localhost:27017/proyecttavo", (err, res) => {
   if (err) throw err;

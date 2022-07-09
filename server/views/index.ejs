@@ -59,17 +59,8 @@
 
       envPOST.addEventListener('click', async e => {
 
-        console.log("Hiola");
-        const datos = await fetch('https://contavo2.herokuapp.com/users', {
-          method:'post',
-          headers: {
-            'Content-Type':'application/json'
-          },
-          body: JSON.stringify({
-             username: "holamundo",
-             password: "hola123",
-             email: "hgola@gmail.com"
-          })
+        const datos = await fetch('http://localhost:3000/carros', {
+          method:'post'
         })
 
         const res = await datos.json();

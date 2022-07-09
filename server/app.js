@@ -47,11 +47,6 @@ app.get('/lala', (req, res) =>{
 
 
 app.post('/carros', (req, res) =>{
-  res.set({
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*"
-  })
-
   res.send({
     ok: true,
     msg: "hola"

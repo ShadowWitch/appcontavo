@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
     <title>Document</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
 
   </head>
   <body>
@@ -67,9 +66,9 @@
 
 
       btnEnviar2.addEventListener('click', async (e) =>{
-        let datos = await fetch('https://contavo2.herokuapp.com/carros', {
-          method: 'post',
-          mode: 'no-cors',
+        let datos = await fetch('https://contavo2.herokuapp.com/users', {
+          method: 'put',
+          mode: 'cors',
           headers: {
             'Content-Type': 'application/json',
             'Accept': '*/*',

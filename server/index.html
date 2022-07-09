@@ -31,9 +31,12 @@
     </form>
 
     <button id="btnEnviar">Enviar data</button>
+    <button id="btnEnviar2">Enviar carros</button>
+
 
     <script>
       const btnEnviar = document.getElementById('btnEnviar')
+      const btnEnviar2 = document.getElementById('btnEnviar2')
       
       btnEnviar.addEventListener('click', async (e) =>{
 
@@ -55,6 +58,22 @@
         }).then(res => res.json())
         .then(data => console.log(data))
         .catch(err => console.log(err))
+      })
+
+
+      btnEnviar2.addEventListener('click', async (e) =>{
+        let datos = await fetch('https://contavo2.herokuapp.com/carros', {
+          method: 'post',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': '*/*',
+            'Connection': 'keep-alive'
+          }
+        })
+        
+        console.log(datos)
+
       })
 
     </script>

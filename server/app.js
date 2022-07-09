@@ -31,7 +31,7 @@ app.get("/users", (req, res) => {
 });
 
 
-app.get('/carros', (req, res) =>{
+app.get('/carros2', (req, res) =>{
   res.json({
     ok: true,
     msg: 'Tienes un carro'
@@ -47,15 +47,16 @@ app.get('/lala', (req, res) =>{
 
 
 app.post('/carros', (req, res) =>{
-  res.header({
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Credentials' : true
-  }).json({
+  res.set({
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*"
+  })
+
+  res.send({
     ok: true,
-    msg: 'Tienes un carro POST'
+    msg: "hola"
   })
 })
-
 
 
 app.post("/users", (req, res) => {

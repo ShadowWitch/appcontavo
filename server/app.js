@@ -38,6 +38,13 @@ app.get('/carros', (req, res) =>{
   })
 })
 
+app.get('/lala', (req, res) =>{
+  res.json({
+    ok: true,
+    msg: 'Tienes un lala'
+  })
+})
+
 
 app.post('/carros', (req, res) =>{
   res.header({
@@ -62,26 +69,26 @@ app.post("/users", (req, res) => {
 
   usuario.save((err, usuarioDB) => {
     if (err) {
-      return res.header({
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Credentials' : true
-      }).status(500).json({
+      res.set({
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
+      })
+      return res.status(500).json({
         ok: false,
         msg:'Hola mundo',
         err
       });
     }
 
-    res.header({
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Credentials' : true
-    }).json({
-      ok: true,
-      usuarioDB,
+    res.set({
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*"
     })
 
-    res.set
-
+    res.json({
+      ok: true,
+      usuarioDB
+    })
 
   });
 });

@@ -30,6 +30,24 @@ app.get("/users", (req, res) => {
   res.render('index')
 });
 
+
+app.get('/carros', (req, res) =>{
+  res.json({
+    ok: true,
+    msg: 'Tienes un carro'
+  })
+})
+
+
+app.post('/carros', (req, res) =>{
+  res.json({
+    ok: true,
+    msg: 'Tienes un carro POST'
+  })
+})
+
+
+
 app.post("/users", (req, res) => {
   const { username, password, email } = req.body;
 

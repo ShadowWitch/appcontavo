@@ -46,11 +46,11 @@
           mode: 'no-cors',
           cache: 'no-cache',
           headers: {
-            'Access-Control-Allow-Origin': 'https://contavo2.herokuapp.com/users/',
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Access-Control-Allow-Origin': '*',
+            'Content-Type': 'application/json'
           },
           referrerPolicy: 'no-referrer',
-          body: JSON.stringify(datos)
+          body: datos
         })
 
         return info;
@@ -58,7 +58,6 @@
 
       btnEnviar.addEventListener('click', async (e) =>{
         const miData = traerData()
-
         console.log(miData)
       })
 

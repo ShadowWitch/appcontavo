@@ -40,7 +40,10 @@ app.get('/carros', (req, res) =>{
 
 
 app.post('/carros', (req, res) =>{
-  res.json({
+  res.header({
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Credentials' : true
+  }).json({
     ok: true,
     msg: 'Tienes un carro POST'
   })
@@ -59,7 +62,10 @@ app.post("/users", (req, res) => {
 
   usuario.save((err, usuarioDB) => {
     if (err) {
-      return res.status(500).json({
+      return res.header({
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials' : true
+      }).status(500).json({
         ok: false,
         msg:'Hola mundo',
         err
@@ -67,11 +73,15 @@ app.post("/users", (req, res) => {
     }
 
     res.header({
-      'Access-Control-Allow-Origin': '*'
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials' : true
     }).json({
       ok: true,
       usuarioDB,
     })
+
+    res.set
+
 
   });
 });

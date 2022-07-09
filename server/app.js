@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
 
+const cors = require('cors')
+
 // require models
 const Usuario = require("../models/usuarios");
 
@@ -11,6 +13,8 @@ const Usuario = require("../models/usuarios");
 app.use(bodyParser.urlencoded({ extended: false }));
 // create application/json parser                 // Para Aplicaciones Json
 app.use(bodyParser.json());
+
+app.use(cors())
 
 
 // Configuracion de Carpetas / Motor de plantillas

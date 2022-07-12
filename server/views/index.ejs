@@ -58,9 +58,9 @@
       const envPOST = document.getElementById('envPOST')
 
       envPOST.addEventListener('click', async e => {
-
-        const datos = await fetch('https://contavo2.herokuapp.com/carros', {
-          method:'post'
+        //Edita aqui
+        const datos = await fetch('/users', {
+          method:'get'
         })
 
         const res = await datos.json();

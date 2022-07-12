@@ -14,6 +14,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // create application/json parser                 // Para Aplicaciones Json
 app.use(bodyParser.json());
 
+// Lista de origins permitidos
+// const whiteList = ['http://localhost:3000', 'http://127.0.0.1:5500']
+
 app.use(cors())
 
 
@@ -90,6 +93,8 @@ app.post("/users", (req, res) => {
 
   });
 });
+
+
 
 app.listen(port, () => {
   console.log(`Server in port ${port}`);

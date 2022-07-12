@@ -49,34 +49,19 @@
       <input type="button" value="Enviar" id="submit" class="boton" />
     </form>
 
+    <button id="envPOST">Enviar POST</button>
+
     <script>
-      const $submit = document.getElementById("submit"),
-        $txtUser = document.getElementById("usuario"),
-        $txtEmail = document.getElementById("email"),
-        $txtPass = document.getElementById("password");
+      const envPOST = document.getElementById("envPOST");
 
-      async function datos() {
-        let users = {
-          username: $txtUser.value,
-          password: $txtPass.value,
-          email: $txtEmail.value,
-        };
-        try {
-          let res = await fetch("https://contavo2.herokuapp.com/users", {
-            method: "POST",
-            body: JSON.stringify(users),
-            headers: { "Content-type": "application/json" },
-          });
+      envPOST.addEventListener("click", async (e) => {
+        //Edita aqui
+        const datos = await fetch("/users", {
+          method: "get",
+        });
 
-          let json = await res.json();
-          console.log(json);
-        } catch (error) {
-          console.log(error);
-        }
-      }
-
-      $submit.addEventListener("click", () => {
-        datos();
+        const res = await datos.json();
+        console.log(res);
       });
     </script>
   </body>

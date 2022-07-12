@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Document</title>
+
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form action="" id="formSubmit">
+      <label for="usuario">Usuario:</label>
+      <input type="text" name="username" class="inputs" required />
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="txtEmail" class="inputs" required />
+
+      <label for="password">Contraseña:</label>
+      <input
+        type="password"
+        name="password"
+        class="inputs"
+        required
+      />
+    </form>
+
+    <button id="envPOST">Enviar POST</button>
+
+    <script>
+      const envPOST = document.getElementById('envPOST')
+      const formSubmit = document.getElementById('formSubmit')
+      const txtEmail = document.getElementById('txtEmail')
+
+
+      envPOST.addEventListener('click', async e => {
+        const datos = await fetch('http://localhost:3000/lala', {
+          method:'get'
+        })
+
+        const res = await datos.json();
+        console.log(res)
+      })
+
+    </script>
+   
+  </body>
+</html>

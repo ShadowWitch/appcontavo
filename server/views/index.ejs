@@ -30,7 +30,7 @@
   </head>
   <body>
     <h1>Login</h1>
-    <form action="">
+    <form action="" id="form">
       <label for="usuario">Usuario:</label>
       <input type="text" name="usuario" id="usuario" class="inputs" required />
 
@@ -53,11 +53,20 @@
 
     <script>
       const envPOST = document.getElementById("envPOST");
+      const $form = document.getElementById("form");
 
       envPOST.addEventListener("click", async (e) => {
         //Edita aqui
         const datos = await fetch("/users", {
-          method: "get",
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            username: $form.usuario.value,
+            email: $form.email.value,
+            password: $form.password.value,
+          }),
         });
 
         const res = await datos.json();
